@@ -1,0 +1,15 @@
+{
+  "name": "javascript-3",
+  "version": "1.0.0",
+  "description": "Tugas",
+  "main": "task4.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node task4.js"
+  },
+  "author": "Triansyah17",
+  "license": "ISC",
+  "dependencies": {
+    "cross-fetch": "^3.1.5"
+  }
+}
