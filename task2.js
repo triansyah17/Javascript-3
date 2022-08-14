@@ -1,26 +1,26 @@
-const getMonth = (callback) => {
+const getMonth = () => {
+    return new Promise ((resolve, reject) => {
     setTimeout(() => {
-        let error = false
-        let month = ['January', 'February', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', "September", 'Oktober', 'November', 'Desember']
-        if (!error) {
-            callback(null, month)
-        } else{
-            callback(new Error('Sorry Data is not Found'))
-        }
-    }, 1000);
+            let error = false;
+            let months = ['January', "Febuary", "Maret", "April", "Mei", "Juni", "Agustus", "September", "Oktober", "November", "Desember"]
+            if(!error){
+                resolve(months);
+            }else{
+                reject(new Error('Sorry Data Not Found'), []);
+            }
+        }, 1000);
+    })
 }
 
-//callback function
-const newMonth = (err, month) => {
-    try {
-        if(month.length === 0) throw err
-        else {
-            month.map(nilai => {
-                console.log(nilai)
-            })
-        }
-    } catch (error) {
-        console.log(error.message)
+const showMonths = async () => {
+    try{
+
+        const months = await getMonth();
+        months.map(month => console.log(month));
+
+    }catch(err){
+        console.log(err);
     }
 }
-getMonth(newMonth)
+
+showMonths();
